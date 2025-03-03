@@ -25,5 +25,4 @@ This Java project simulates a deck of 52 playing cards using Object-Oriented Pro
 
 
 ## Commit History and GitHub Link
-Each file and method has been committed separately to maintain a clear history.
-[GitHub Repository Link](your-repo-link-here)
+[GitHub Repository Link](https://github.com/shwetgaur/Cards.git)
