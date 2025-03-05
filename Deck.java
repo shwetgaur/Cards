@@ -2,6 +2,7 @@ package assignment4;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Deck {
     private ArrayList<Cards> deck;
@@ -51,6 +52,47 @@ public class Deck {
             if (card.getSuit().equals(suit)) {
                 System.out.println(card);
             }
+        }
+    }
+
+    public void sameCard() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first card suit: ");
+        String suit1 = scanner.next();
+        System.out.print("Enter second card suit: ");
+        String suit2 = scanner.next();
+        System.out.println(suit1.equalsIgnoreCase(suit2) ? "Cards are from the same suit." : "Cards are from different suits.");
+    }
+
+    public void compareCard() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first card rank: ");
+        String rank1 = scanner.next();
+        System.out.print("Enter second card rank: ");
+        String rank2 = scanner.next();
+        System.out.println(rank1.equalsIgnoreCase(rank2) ? "Cards have the same rank." : "Cards have different ranks.");
+    }
+
+    public void findCard() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter card rank: ");
+        String rank = scanner.next();
+        System.out.print("Enter card suit: ");
+        String suit = scanner.next();
+        boolean found = false;
+        for (Card card : cards) {
+            if (card.getRank().equalsIgnoreCase(rank) && card.getSuit().equalsIgnoreCase(suit)) {
+                found = true;
+                break;
+            }
+        }
+        System.out.println(found ? "Card found in deck." : "Card not found.");
+    }
+
+    public void dealCard() {
+        Collections.shuffle(cards);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(cards.get(i));
         }
     }
 
